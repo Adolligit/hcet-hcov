@@ -6,17 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Role extends Model
+class EconomicGroup extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'id',
         'name',
-        'description',
     ];
 
     public function employee(): HasMany {
-        return $this->hasMany(Employee::class);
+        return $this->hasMany(Corporation::class);
     }
 }
